@@ -74,111 +74,11 @@
             width: 100%;
         }
 
-        .login-btn {
-            padding: 10px 20px;
-            background-color: #6a11cb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .login-btn:hover {
-            background-color: #2575fc;
-        }
-
-        /* Checkbox untuk kontrol modal */
-        .login-toggle {
-            display: none; /* Sembunyikan checkbox */
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none; /* Sembunyikan modal secara default */
-            position: fixed; /* Tetap di tempat */
-            z-index: 1; /* Di atas */
-            left: 0;
-            top: 0;
-            width: 100%; /* Lebar penuh */
-            height: 100%; /* Tinggi penuh */
-            overflow: auto; /* Aktifkan scroll jika perlu */
-            background-color: rgba(0, 0, 0, 0.4); /* Hitam dengan opasitas */
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 15% auto; /* 15% dari atas dan di tengah */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 300px; /* Bisa lebih atau kurang, tergantung ukuran layar */
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-        }
-
-        /* Tampilkan modal saat checkbox dicentang */
-        .login-toggle:checked + .modal {
-            display: block; /* Tampilkan modal */
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
             color: #555;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            border-color: #6a11cb;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #6a11cb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #2575fc;
         }
 
         main {
@@ -196,7 +96,7 @@
         .column {
             flex: 1;
             margin: 0 10px;
-            background-color: rgba(0, 0, 0, 0.2); /* Warna transparan */
+            background-color: rgba(0, 0, 0, 0.2);
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -222,14 +122,14 @@
 
         .video-container {
             margin: 20px 0;
-            text-align: center; /* Center the video */
+            text-align: center; 
         }
 
         .video-container iframe {
-            width: 100%; /* Full width */
-            height: 400px; /* Height of the video */
-            border: none; /* No border */
-            border-radius: 5px; /* Rounded corners */
+            width: 100%;
+            height: 400px; 
+            border: none;
+            border-radius: 5px; 
         }
 
         footer {
@@ -238,8 +138,8 @@
             padding: 20px 0; 
             display: flex; 
             justify-content: space-between; 
-            align-items: flex-start; /* Ubah ke flex-start untuk menyelaraskan bagian atas */
-            height: auto; /* Ganti menjadi auto untuk penyesuaian konten */
+            align-items: flex-start; 
+            height: auto;
         }
 
         .social-media {
@@ -255,15 +155,15 @@
         .social-media a {
             color: #f4f4f4; 
             text-decoration: none;
-            display: flex; /* Agar logo dan URL bisa sejajar */
-            align-items: center; /* Vertically center align */
-            margin-bottom: 10px; /* Jarak antar item */
+            display: flex; 
+            align-items: center;
+            margin-bottom: 10px; 
         }
 
         .social-media img {
-            width: 40px; /* Ukuran logo */
-            height: auto; /* Menjaga rasio aspek */
-            margin-right: 10px; /* Jarak antara logo dan URL */
+            width: 40px; 
+            height: auto; 
+            margin-right: 10px; 
         }
 
         .contact-info {
@@ -294,29 +194,7 @@
                 <li><a href="about.html" class="nav-item">About</a></li>
                 <li><a href="adukasi.html" class="nav-item">Edukasi</a></li>
                 <li><a href="tokoh.html" class="nav-item">Tokoh</a></li>
-            </ul>
-            <label for="login-toggle" class="login-btn">Login</label>
-            <input type="checkbox" id="login-toggle" class="login-toggle">
-            
-            <div class="modal">
-                <div class="modal-content">
-                    <label for="login-toggle" class="close">&times;</label>
-                    <h2>Login</h2>
-                    <form action="dashboard.html" method="POST">
-                        <div class="input-group">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" required>
-                        </div>
-                        <button type="submit">Masuk</button>
-                    </form>
-                    <p style="color: #000000">Belum punya akun? <a href="register.html">Daftar di sini</a></p>
-                    <p><a href="forgot-password.html">Lupa password?</a></p>
-                </div>
-            </div>        
+            </ul>      
         </nav>
     </header>
 
@@ -349,32 +227,29 @@
 
         <div class="video-container">
             <h2>Video Edukasi</h2>
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+            <iframe src="https://youtube.com/playlist?list=PLQIfdzOCCNS-E4RSx2hKpV9gxYHv-Cx9i&si=dPx7zj3o_BS31MuD" 
                     title="Video Edukasi" 
                     allowfullscreen>
             </iframe>
         
         </div>
-        <section id="kesimpulan">
-            <h2>Kesimpulan</h2>
-            <p>Memasuki dunia ekonomi dan industri kreatif memerlukan kombinasi pendidikan, networking, dan pengalaman praktis. Dengan memanfaatkan sumber daya yang tersedia dan terlibat dalam komunitas, pemula dapat mengembangkan keterampilan dan pengetahuan yang diperlukan untuk berhasil di kedua sektor ini.</p>
         </section>
     </main>
 
     <footer>
         <div class="social-media">
             <h3>Ikuti Kami di Media Sosial</h3>
-            <a href="https://www.facebook.com">
-                <img src="facebook-logo.png" alt="Facebook Logo"> Facebook
+            <a href="https://www.tiktok.com">
+                <img src="logo tiktok.png" alt="Tiktok Logo"> Tiktok
             </a>
-            <a href="https://www.instagram.com">
+            <a href="https://www.instagram.com/pawassxac/profilecard/?igsh=dmY5ZWh3dHM0NnR3">
                 <img src="logo ig.png" alt="Instagram Logo" style="width: 40px;"> Instagram
             </a>
             <a href="https://www.twitter.com">
-                <img src="twitter-logo.png" alt="Twitter Logo"> Twitter
+                <img src="logo x.png" alt="Twitter Logo"> Twitter
             </a>
-            <a href="https://www.linkedin.com">
-                <img src="linkedin-logo.png" alt="LinkedIn Logo"> LinkedIn
+            <a href="https://www.facebook.com">
+                <img src="logo fb.png" alt="Facebook Logo"> Facebook
             </a>
         </div>
         <div class="contact-info">
