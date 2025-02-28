@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -72,19 +74,19 @@
             width: 100%;
         }
 
-        .login-button {
-            background-color: #ffbd3a;
-            color: white;
-            border: none;
+        .cta-button {
+            background-color: #000000;
+            color: #fff; 
+            padding: 10px 20px;
             border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s;
+            text-decoration: none; 
+            transition: background 0.5s ease;
+            border: 2px solid #b7980f;
         }
 
-        .login-button:hover {
-            background-color: #ffbd3a;
+        .cta-button:hover {
+            background-color: #b7980f;
+            color: black; 
         }
         
         table {
@@ -175,7 +177,11 @@
                 <li><a href="adukasi.html" class="nav-item">Edukasi</a></li>
                 <li><a href="tokoh.html" class="nav-item">Tokoh</a></li>
             </ul>
-            <a href="#" class="login-button">Login</a>
+            <?php if ($loggedInUser): ?>
+            <a href="dasbor.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+        <?php else: ?>
+            <a href="/ukl_fawwaz/html/login.php" id="loginButton" class="cta-button">Login</a>
+        <?php endif; ?>
         </nav>
     </header>
     <br>

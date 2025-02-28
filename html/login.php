@@ -14,13 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     
     if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['loggedInUser'] = $user['username'];
+        
         $_SESSION['user_id'] = $user['id'];
-        header("Location: dashboard.php");
+        header("Location: /ukl_fawwaz/html/landingpage.php");
         exit;
     } else {
         $error = "Username atau password salah!";
     }
 }
+$loggedInUser  = isset($_SESSION['loggedInUser ']) ? $_SESSION['loggedInUser '] : null;
 ?>
 
 <!DOCTYPE html>

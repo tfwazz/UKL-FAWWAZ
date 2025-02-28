@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -73,6 +75,22 @@
         .nav-item:active:after {
             width: 100%;
         }
+
+        .cta-button {
+            background-color: #000000;
+            color: #fff; 
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none; 
+            transition: background 0.5s ease;
+            border: 2px solid #b7980f;
+        }
+
+        .cta-button:hover {
+            background-color: #b7980f;
+            color: black; 
+        }
+
 
         label {
             display: block;
@@ -194,7 +212,12 @@
                 <li><a href="about.html" class="nav-item">About</a></li>
                 <li><a href="adukasi.html" class="nav-item">Edukasi</a></li>
                 <li><a href="tokoh.html" class="nav-item">Tokoh</a></li>
-            </ul>      
+            </ul>
+            <?php if ($loggedInUser): ?>
+            <a href="dasbor.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+        <?php else: ?>
+            <a href="/ukl_fawwaz/html/login.php" id="loginButton" class="cta-button">Login</a>
+        <?php endif; ?>    
         </nav>
     </header>
 

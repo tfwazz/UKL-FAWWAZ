@@ -1,8 +1,14 @@
 <?php
 $host = 'localhost';
-$db = 'my_databases';
+$db = 'revisiukl';
 $user = 'root';
 $pass = '';
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
