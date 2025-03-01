@@ -13,17 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $stmt->fetch();
 
     
-    if ($user && password_verify($password, $user['password'])) {
+    if ($user) {
         $_SESSION['loggedInUser'] = $user['username'];
-        
-        $_SESSION['user_id'] = $user['id'];
-        header("Location: /ukl_fawwaz/html/landingpage.php");
-        exit;
+        $_SESSION['role'] = $user['role']; // Simpan role ke session
+
+        if ($user['role'] === 'admin') {
+            header("Location: admin.php"); // Akses ke CRUD admin
+        } else {
+            header("Location: user_dashboard.php"); // Akses untuk user biasa
+        }
+
     } else {
         $error = "Username atau password salah!";
     }
 }
-$loggedInUser  = isset($_SESSION['loggedInUser ']) ? $_SESSION['loggedInUser '] : null;
 ?>
 
 <!DOCTYPE html>

@@ -91,6 +91,19 @@
             color: black; 
         }
 
+        .crud-button {
+            background-color: #ffbd3a;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.5s ease;
+            margin-left: 10px;
+        }
+        .crud-button:hover {
+            background-color:rgb(0, 0, 0);
+            color: white;
+        }
 
         label {
             display: block;
@@ -202,23 +215,24 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                
-                <img src="logo ukl 3 (1).png" alt="logo">
-            </div>
-            <ul class="nav-list">
-                <li><a href="landingpage.html" class="nav-item">Home</a></li>
-                <li><a href="about.html" class="nav-item">About</a></li>
-                <li><a href="adukasi.html" class="nav-item">Edukasi</a></li>
-                <li><a href="tokoh.html" class="nav-item">Tokoh</a></li>
-            </ul>
-            <?php if ($loggedInUser): ?>
-            <a href="dasbor.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+    <nav>
+        <div class="logo">
+            
+            <img src="logo ukl 3 (1).png" alt="logo">
+        </div>
+        <ul class="nav-list">
+            <li><a href="landingpage.php" class="nav-item">Home</a></li>
+            <li><a href="about.php" class="nav-item">About</a></li>
+            <li><a href="adukasi.php" class="nav-item">Edukasi</a></li>
+            <li><a href="tokoh.php" class="nav-item">Tokoh</a></li>
+        </ul>
+        <?php if ($loggedInUser): ?>
+            <a href="/ukl_fawwaz/html/dashboard.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+            <a href="/ukl_fawwaz/html/user.php" class="crud-button">CRUD</a>
         <?php else: ?>
             <a href="/ukl_fawwaz/html/login.php" id="loginButton" class="cta-button">Login</a>
-        <?php endif; ?>    
-        </nav>
+        <?php endif; ?>
+    </nav>
     </header>
 
     <main>

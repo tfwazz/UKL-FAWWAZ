@@ -45,6 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="password"><i class="fas fa-lock"></i> Password</label>
                 <input type="password" name="password" required>
             </div>
+            <select name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
             <button type="submit">Daftar</button>
             <p class="error-message">
                 <?php if ($error) echo $error; ?>

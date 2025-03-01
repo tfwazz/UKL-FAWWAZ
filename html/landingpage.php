@@ -98,6 +98,19 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
             color: black; 
         }
 
+        .crud-button {
+            background-color: #ffbd3a;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.5s ease;
+            margin-left: 10px;
+        }
+        .crud-button:hover {
+            background-color:rgb(0, 0, 0);
+            color: white;
+        }
 
         .hero {
             height: 50vh;
@@ -211,13 +224,14 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
             <img src="logo ukl 3 (1).png" alt="logo">
         </div>
         <ul class="nav-list">
-            <li><a href="landingpage.html" class="nav-item">Home</a></li>
-            <li><a href="about.html" class="nav-item">About</a></li>
-            <li><a href="adukasi.html" class="nav-item">Edukasi</a></li>
-            <li><a href="tokoh.html" class="nav-item">Tokoh</a></li>
+            <li><a href="landingpage.php" class="nav-item">Home</a></li>
+            <li><a href="about.php" class="nav-item">About</a></li>
+            <li><a href="edukasi.php" class="nav-item">Edukasi</a></li>
+            <li><a href="tokoh.php" class="nav-item">Tokoh</a></li>
         </ul>
         <?php if ($loggedInUser): ?>
-            <a href="/ukl_fawwaz/login/dasbord.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+            <a href="/ukl_fawwaz/html/dashboard.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+            <a href="/ukl_fawwaz/html/user.php" class="crud-button">CRUD</a>
         <?php else: ?>
             <a href="/ukl_fawwaz/html/login.php" id="loginButton" class="cta-button">Login</a>
         <?php endif; ?>
