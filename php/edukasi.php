@@ -228,7 +228,7 @@
         </ul>
         <?php if ($loggedInUser): ?>
             <a href="/ukl_fawwaz/html/dashboard.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
-            <a href="/ukl_fawwaz/html/user.php" class="crud-button">CRUD</a>
+            <a href="/ukl_fawwaz/html/user.php" class="crud-button">Profile</a>
         <?php else: ?>
             <a href="/ukl_fawwaz/html/login.php" id="loginButton" class="cta-button">Login</a>
         <?php endif; ?>

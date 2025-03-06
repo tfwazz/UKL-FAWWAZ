@@ -15,12 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($user) {
         $_SESSION['loggedInUser'] = $user['username'];
-        $_SESSION['role'] = $user['role']; // Simpan role ke session
+        $_SESSION['role'] = $user['role']; 
 
         if ($user['role'] === 'admin') {
-            header("Location: admin.php"); // Akses ke CRUD admin
+            header("Location: admin.php");
         } else {
-            header("Location: user_dashboard.php"); // Akses untuk user biasa
+            header("Location: landingpage.php"); 
         }
 
     } else {

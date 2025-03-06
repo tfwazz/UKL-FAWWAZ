@@ -2,22 +2,18 @@
 session_start();
 include 'db.php';
 
-// Pastikan session hanya dimulai sekali
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Periksa apakah user sudah login dan memiliki role admin
 if (!isset($_SESSION['loggedInUser']) || ($_SESSION['role'] ?? '') !== 'admin') {
-    header("Location: login.php"); // Redirect jika bukan admin
+    header("Location: login.php"); 
     exit();
 }
 
-// Ambil data pengguna dari database
 $query = "SELECT * FROM users";
 $result = mysqli_query($conn, $query);
 
-// Proses hapus pengguna jika tombol delete ditekan
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     $id = $_POST['id'] ?? null;
 

@@ -119,7 +119,7 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
             text-align: center;
             background: #e9ecef;
             animation: fadeIn 1.5s ease-in-out;
-            background-image: url(banner\ \ \(1\).png);
+            background-image: url(/ukl_fawwaz/image/baner.png);
             background-size: cover; 
             background-position: center 20%; 
             margin-top: 0px;
@@ -221,7 +221,7 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
     <nav>
         <div class="logo">
             
-            <img src="logo ukl 3 (1).png" alt="logo">
+            <img src="/ukl_fawwaz/image/logo ukl 3 (1).png" alt="logo">
         </div>
         <ul class="nav-list">
             <li><a href="landingpage.php" class="nav-item">Home</a></li>
@@ -230,10 +230,10 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
             <li><a href="tokoh.php" class="nav-item">Tokoh</a></li>
         </ul>
         <?php if ($loggedInUser): ?>
-            <a href="/ukl_fawwaz/html/dashboard.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
-            <a href="/ukl_fawwaz/html/user.php" class="crud-button">CRUD</a>
+            <a href="/ukl_fawwaz/php/dashboard.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
+            <a href="/ukl_fawwaz/php/user.php" class="crud-button">Profile</a>
         <?php else: ?>
-            <a href="/ukl_fawwaz/html/login.php" id="loginButton" class="cta-button">Login</a>
+            <a href="/ukl_fawwaz/php/login.php" id="loginButton" class="cta-button">Login</a>
         <?php endif; ?>
     </nav>
 </header>
@@ -246,17 +246,17 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
     <section class="services">
         <h1 style="color: #f4f4f4; text-size-adjust: 50px;">Service</h1>
         <div class="service-item">
-            <img src="3.png" alt="">
+            <img src="/ukl_fawwaz/image/3.png" alt="">
             <h3>Edukasi</h3>
             <h3 style="color: #ffbd69;">____</h3>
         </div>
         <div class="service-item">
-            <img src="1.png" alt="">
+            <img src="/ukl_fawwaz/image/1.png" alt="">
             <h3>Materi</h3>
             <h3 style="color: #ffbd69;">____</h3>
         </div>
         <div class="service-item">
-            <img src="2.png" alt="">
+            <img src="/ukl_fawwaz/image/2.png" alt="">
             <h3>Tokoh Inspiratif</h3>
             <h3 style="color: #ffbd69;">____</h3>
         </div>
@@ -266,16 +266,16 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
         <div class="social-media">
             <h3>Ikuti Kami di Media Sosial</h3>
             <a href="https://www.tiktok.com">
-                <img src="logo tiktok.png" alt="Tiktok Logo"> Tiktok
+                <img src="/ukl_fawwaz/image/logo tiktok.png" alt="Tiktok Logo"> Tiktok
             </a>
             <a href="https://www.instagram.com/pawassxac/profilecard/?igsh=dmY5ZWh3dHM0NnR3">
-                <img src="logo ig.png" alt="Instagram Logo" style="width: 40px;"> Instagram
+                <img src="/ukl_fawwaz/image/logo ig.png" alt="Instagram Logo" style="width: 40px;"> Instagram
             </a>
             <a href="https://www.twitter.com">
-                <img src="logo x.png" alt="Twitter Logo"> Twitter
+                <img src="/ukl_fawwaz/image/logo x.png" alt="Twitter Logo"> Twitter
             </a>
             <a href="https://www.facebook.com">
-                <img src="logo fb.png" alt="Facebook Logo"> Facebook
+                <img src="/ukl_fawwaz/image/logo fb.png" alt="Facebook Logo"> Facebook
             </a>
         </div>
         <div class="contact-info">
