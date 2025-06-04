@@ -11,7 +11,7 @@ $stmt->execute(['id' => $_SESSION['user_id']]);
 $user = $stmt->fetch();
 
 if (!$users) {
-    header("Location: login.php");
+    header("Location: dashboard.php");
     exit;
 }
 ?>
@@ -22,7 +22,7 @@ if (!$users) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">

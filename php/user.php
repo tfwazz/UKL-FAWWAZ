@@ -54,15 +54,16 @@ if (isset($_POST['delete'])) {
             margin: 0;
         }
         .container {
-            background: #fff;
-            padding: 20px;
+            background-color: #fefefe;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
             text-align: center;
-            width: 300px;
+            max-width: 90%;
+            padding: 30px;
         }
         input[type="text"], input[type="password"] {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;

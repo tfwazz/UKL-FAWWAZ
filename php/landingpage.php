@@ -13,211 +13,12 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - Industri Kreatif</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-        }
-
-        header {
-            background-color: #000000;
-            color: rgb(255, 255, 255);
-            padding: 10px 20px;
-        }
-
-        .logo img {
-            width: 40px;
-            height: auto;
-            vertical-align: middle; 
-            border: #f4f4f4;
-        }
-
-        nav {
-            background-color: transparent;
-            display: flex;
-            align-items: center;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0; 
-            flex-grow: 1; 
-        }
-
-        .nav-list li {
-            margin: 0 15px;
-            color: rgb(255, 255, 255);
-        }
-
-        .nav-item {
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            padding: 10px 15px;
-            position: relative; 
-        }
-
-        .nav-item:hover {
-            color: #ffbd3a; 
-        }
-
-        .nav-item:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background: #ffbd3a;
-            transition: width 0.3s;
-        }
-
-        .nav-item:hover:after {
-            width: 100%;
-        }
-
-        .nav-item:active:after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background-color: #000000;
-            color: #fff; 
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none; 
-            transition: background 0.5s ease;
-            border: 2px solid #b7980f;
-        }
-
-        .cta-button:hover {
-            background-color: #b7980f;
-            color: black; 
-        }
-
-        .crud-button {
-            background-color: #ffbd3a;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.5s ease;
-            margin-left: 10px;
-        }
-        .crud-button:hover {
-            background-color:rgb(0, 0, 0);
-            color: white;
-        }
-
-        .hero {
-            height: 50vh;
-            color: #fcf9f9;
-            padding: 100px 10px;
-            text-align: center;
-            background: #e9ecef;
-            animation: fadeIn 1.5s ease-in-out;
-            background-image: url(/ukl_fawwaz/image/baner.png);
-            background-size: cover; 
-            background-position: center 20%; 
-            margin-top: 0px;
-            border-radius: 15px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-        }
-
-        .services {
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .services h1 {
-            margin-bottom: 20px;
-            position: relative;
-            text-size-adjust: 50px;
-        }
-
-        .service-item {
-            background: #1A1A1A;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            width: calc(33% - 200px); 
-        }
-
-        .service-item:hover {
-            background-color: #ffbd3a;
-        }
-
-        .service-item h3 {
-            margin-top: 0;
-            color: #f4f4f4;
-        }
-
-        footer {
-            background-color: #1A1A1A; 
-            color: #f4f4f4; 
-            padding: 20px 0; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-start;
-            height: auto; 
-        }
-
-        .social-media {
-            flex: 1; 
-            text-align: left; 
-            margin-left: 20px;
-        }
-
-        .social-media h3 {
-            margin-bottom: 10px;
-        }
-
-        .social-media a {
-            color: #f4f4f4; 
-            text-decoration: none;
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 10px; 
-        }
-
-        .social-media img {
-            width: 40px; 
-            height: auto; 
-            margin-right: 10px; 
-        }
-
-        .contact-info {
-            flex: 1; 
-            text-align: justify; 
-            margin-right: 20px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: #ffbd69; 
-            text-decoration: none;
-        }  
+    <link rel="icon" href="/ukl_fawwaz/image/logo ukl 3 (1).png">
+    <link rel="stylesheet" href="styles2.css">
     </style>
 </head>
 <body>
+<header>
     <nav>
         <div class="logo">
             
@@ -228,6 +29,7 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
             <li><a href="about.php" class="nav-item">About</a></li>
             <li><a href="edukasi.php" class="nav-item">Edukasi</a></li>
             <li><a href="tokoh.php" class="nav-item">Tokoh</a></li>
+            <li><a href="reviewuser.php" class="nav-item">Review</a></li>
         </ul>
         <?php if ($loggedInUser): ?>
             <a href="/ukl_fawwaz/php/dashboard.php" class="cta-button"><?php echo htmlspecialchars($loggedInUser); ?></a>
@@ -245,22 +47,63 @@ $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : 
 
     <section class="services">
         <h1 style="color: #f4f4f4; text-size-adjust: 50px;">Service</h1>
-        <div class="service-item">
+        <div class="service-item" href="edukasi.php">
             <img src="/ukl_fawwaz/image/3.png" alt="">
             <h3>Edukasi</h3>
             <h3 style="color: #ffbd69;">____</h3>
         </div>
-        <div class="service-item">
+        <div class="service-item" href="edukasi.php">
             <img src="/ukl_fawwaz/image/1.png" alt="">
             <h3>Materi</h3>
             <h3 style="color: #ffbd69;">____</h3>
         </div>
-        <div class="service-item">
+        <div class="service-item" href="tokoh.php">
             <img src="/ukl_fawwaz/image/2.png" alt="">
             <h3>Tokoh Inspiratif</h3>
             <h3 style="color: #ffbd69;">____</h3>
         </div>
     </section>
+    <br>
+
+    <section class="info-section">
+    <div class="info-container">
+        <div class="info-image">
+            <img src="/ukl_fawwaz/image/Loremipsum (3).png" alt="Gambar Ilustrasi">
+        </div>
+        <div class="info-text">
+            <h2>Apa itu Ekonomi?</h2>
+<p>
+                Ekonomi adalah ilmu yang mempelajari bagaimana manusia mengelola sumber daya yang terbatas untuk memenuhi kebutuhan yang tidak terbatas. 
+                Dalam konteks kehidupan sehari-hari, ekonomi membantu individu dan masyarakat mengambil keputusan terbaik dalam mengalokasikan uang, waktu, dan tenaga.
+                <br><br>
+                Ilmu ekonomi dibagi menjadi dua cabang utama: mikroekonomi, yang fokus pada perilaku individu dan perusahaan; serta makroekonomi, yang menganalisis aktivitas ekonomi secara keseluruhan seperti inflasi, pengangguran, dan pertumbuhan ekonomi.
+                <br><br>
+                Pemahaman dasar tentang ekonomi sangat penting dalam membangun pola pikir kritis terhadap isu-isu sosial dan kebijakan publik, serta mendukung pengambilan keputusan yang bijak dalam kehidupan pribadi maupun profesional.
+            </p>
+
+        </div>
+    </div>
+    <section class="info-section">
+    <div class="info-container reverse">
+        <div class="info-text">
+            <h2>Industri Kreatif</h2>
+            <p>
+                Industri kreatif adalah sektor ekonomi yang berfokus pada penciptaan, produksi, dan distribusi barang dan jasa yang berasal dari ide, kreativitas, dan bakat individu. Industri ini mencakup berbagai bidang seperti seni, musik, desain, film, periklanan, mode, arsitektur, hingga pengembangan perangkat lunak dan konten digital.
+                <br><br>
+                Keunggulan utama industri kreatif terletak pada inovasi dan nilai tambah yang dihasilkan dari proses berpikir kreatif.
+
+Industri kreatif berperan penting dalam mendorong pertumbuhan ekonomi, menciptakan lapangan kerja, serta meningkatkan citra budaya suatu bangsa.
+                <br><br>
+Dengan dukungan teknologi dan internet, pelaku industri kreatif dapat menjangkau pasar yang lebih luas dan memanfaatkan berbagai platform digital untuk mempromosikan karya mereka. Oleh karena itu, industri kreatif dianggap sebagai motor penggerak ekonomi baru yang berbasis pada pengetahuan dan kreativitas manusia.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="/ukl_fawwaz/image/Loremipsum (4).png" alt="Gambar Edukasi Ekonomi">
+        </div>
+    </div>
+</section>
+
+</section>
 
     <footer>
         <div class="social-media">

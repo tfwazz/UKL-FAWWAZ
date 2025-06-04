@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -45,10 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="password"><i class="fas fa-lock"></i> Password</label>
                 <input type="password" name="password" required>
             </div>
-            <select name="role">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select>
             <button type="submit">Daftar</button>
             <p class="error-message">
                 <?php if ($error) echo $error; ?>
