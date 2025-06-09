@@ -155,6 +155,40 @@ main {
     width: calc(33% - 200px); 
 }
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: flex-start;
+    background-color: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.profile h2 {
+    margin-top: 0;
+    color: #ffcc00;
+}
+
+.profile p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
 .package-content {
     display: flex;
     flex-wrap: wrap;

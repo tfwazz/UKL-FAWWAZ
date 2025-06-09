@@ -190,6 +190,14 @@ if (isset($_GET['edit'])) {
         a {
             text-decoration: none;
         }
+        .logout-button {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -267,6 +275,8 @@ if (isset($_GET['edit'])) {
     </tr>
     <?php endwhile; ?>
 </table>
+<a href="logout.php" class="logout-button">Logout</a>
+<a href="landingpage.php" class="logout-button" style="background-color: #ffbd3a; color: black; margin-left: 10px;">Beranda</a>
 </div>
 </body>
 </html>

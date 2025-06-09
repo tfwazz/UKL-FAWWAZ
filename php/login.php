@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role'] = $user['role']; 
     
         if ($user['role'] === 'admin') {
-            header("Location: tabeluser.php");
+            header("Location: admin.php");
             exit;
         } else if ($user['role'] === 'user') {
             header("Location: landingpage.php"); 

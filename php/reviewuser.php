@@ -5,16 +5,15 @@ include 'db.php';
 $loggedInUser  = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
-    $nama = mysqli_real_escape_string($conn, $_POST['nama']);
+    $nama = $loggedInUser ? $loggedInUser : mysqli_real_escape_string($conn, $_POST['nama']);
     $komentar = mysqli_real_escape_string($conn, $_POST['komentar']);
     $rating = intval($_POST['rating']);
-    $tanggal = date("Y-m-d");
 
     $query = "INSERT INTO review (nama_pengguna, komentar, rating) VALUES ('$nama', '$komentar', '$rating')";
     mysqli_query($conn, $query);
 }
 
-$query = "SELECT * FROM review";
+$query = "SELECT * FROM review ORDER BY id_review DESC";
 $result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
@@ -23,7 +22,7 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <title>Review Pengguna</title>
     <link rel="icon" href="/ukl_fawwaz/image/logo ukl 3 (1).png">
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="style2.css">
     <style>
         .form-review input,
         .form-review textarea,
@@ -52,11 +51,13 @@ $result = mysqli_query($conn, $query);
             color: #ccc;
         }
         .review-box small {
-            color: #888;
+            color: #aaa;
+            font-size: 12px;
         }
         .rating-stars {
             color: gold;
             font-size: 20px;
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -91,8 +92,13 @@ $result = mysqli_query($conn, $query);
     <div class="info-container">
         <div class="info-text">
             <h2>Tulis Review Anda</h2>
-            <form method="POST" action="" class="form-review">
-                <input type="text" name="nama" placeholder="Nama Anda" required>
+            <form method="POST" class="form-review">
+                <?php if (!$loggedInUser): ?>
+                    <input type="text" name="nama" placeholder="Nama Anda" required>
+                <?php else: ?>
+                    <input type="text" value="<?php echo htmlspecialchars($loggedInUser); ?>" readonly disabled>
+                    <input type="hidden" name="nama" value="<?php echo htmlspecialchars($loggedInUser); ?>">
+                <?php endif; ?>
                 <textarea name="komentar" placeholder="Tulis komentar Anda..." rows="4" required></textarea>
                 <select name="rating" required>
                     <option value="">Pilih Rating</option>

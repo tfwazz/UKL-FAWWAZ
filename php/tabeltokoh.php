@@ -217,14 +217,13 @@ if (isset($_GET['edit'])) {
             background-color: #dc3545;
             color: white;
         }
-        .logout {
-            margin-top: 25px;
+        .logout-button {
             display: inline-block;
             background: #333;
             color: white;
             padding: 10px 15px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 5px;
         }
         img.thumb {
             max-width: 120px;
@@ -311,6 +310,9 @@ if (isset($_GET['edit'])) {
         <?php endwhile; ?>
         </tbody>
     </table>
+
+    <a href="logout.php" class="logout-button">Logout</a>
+    <a href="landingpage.php" class="logout-button" style="background-color: #ffbd3a; color: black; margin-left: 10px;">Beranda</a>
 </div>
 </body>
 </html>

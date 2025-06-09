@@ -19,7 +19,7 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Tokoh Kreatif</title>
     <link rel="icon" href="/ukl_fawwaz/image/logo ukl 3 (1).png">
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="style2.css">
     </style>
 </head>
 <body>

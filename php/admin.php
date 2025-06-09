@@ -222,7 +222,11 @@ if (isset($_GET['edit'])) {
     </table>
 
     <br>
-    <a href="logout.php" class="logout-button">Logout</a>
+<br>
+<a href="logout.php" class="logout-button">Logout</a>
+<a href="landingpage.php" class="logout-button" style="background-color: #ffbd3a; color: black; margin-left: 10px;">Beranda</a>
+
+
 </div>
 </body>
 </html>

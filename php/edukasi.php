@@ -2,7 +2,12 @@
 session_start();
 include 'db.php';
 
-$loggedInUser = isset($_SESSION['loggedInUser']) ? $_SESSION['loggedInUser'] : null;
+if (!isset($_SESSION['loggedInUser'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$loggedInUser = $_SESSION['loggedInUser'];
 
 $query_mysql = mysqli_query($conn, "
 SELECT m.*, s.id_sumber, s.nama_sumber, s.url_sumber, s.tipe_subjek
@@ -19,7 +24,7 @@ ORDER BY m.id_materi ASC
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materi Edukasi - EcoCreasi</title>
     <link rel="icon" href="/ukl_fawwaz/image/logo ukl 3 (1).png">
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <header>
@@ -44,8 +49,8 @@ ORDER BY m.id_materi ASC
     </header>
 
     <section class="hero">
-        <h1>Selamat Datang di EcoCreasi</h1>
-        <p>Temukan inspirasi di dunia Ekonomi dan Industri Kreatif</p>
+        <h1>Selamat Datang di Edukasi</h1>
+        <p>Mari Mulai Belajar di dunia Ekonomi dan Industri Kreatif</p>
     </section>
 
     <br>
